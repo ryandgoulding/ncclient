@@ -1,0 +1,18 @@
+ncclient OpenDaylight Integration
+============================================================================
+
+This project is aimed towards providing ncclient integration with OpenDaylight.
+ncclient is a netconf client tool written in python.
+
+OpenDaylight has a NETCONF project, called netconf.  NETCONF is dependent
+upon parsing from yangtools, which has an extremely narrow and strict
+interpretation of the YANG modeling language.  This is not necessarily a bad
+thing, since variations in protocol implementation can have non-desirable
+side effects.  However, this could prevent integration with a southbound
+device which provides a non-parsable YANG model.  Additionally, netconf
+has a very strict intepretation of the NETCONF protocol which often leads
+to inability to interoperate with southbound devices.
+
+ncclient integration is an attempt to provide an alternative netconf
+implementation based on existing software.
+
