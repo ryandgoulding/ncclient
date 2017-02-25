@@ -7,14 +7,27 @@ module ncclient {
         description "Initial revision.  Exposes some basic scaffolding to build the ncclient model.";
     }
 
-    rpc expose-python-info {
+    grouping unix-command-return {
+        leaf output {
+            type string;
+        }
+        leaf error {
+            type string;
+        }
+        leaf returnCode {
+            type int32;
+        }
+    }
+
+    rpc which-python {
         output {
-            leaf output {
-                type string;
-            }
-            leaf returnCode {
-                type string;
-            }
+            uses unix-command-return;
+        }
+    }
+
+    rpc python-version {
+        output {
+            uses unix-command-return;
         }
     }
 }
