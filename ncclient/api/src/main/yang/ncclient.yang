@@ -1,0 +1,20 @@
+module ncclient {
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:ncclient";
+    prefix "ncclient";
+
+    revision "2017-02-25" {
+        description "Initial revision.  Exposes some basic scaffolding to build the ncclient model.";
+    }
+
+    rpc expose-python-info {
+        output {
+            leaf output {
+                type string;
+            }
+            leaf returnCode {
+                type string;
+            }
+        }
+    }
+}
